@@ -1,0 +1,5 @@
+# Bluetooth
+bluetooth.hci.erroneous_data_reporting.enabled u:object_r:bluetooth_config_prop:s0
+
+# Motorola
+ro.mot.build.customerid                      u:object_r:build_prop:s0 exact string
