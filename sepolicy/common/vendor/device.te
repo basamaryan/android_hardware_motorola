@@ -8,6 +8,3 @@ type vendor_utags_block_device, dev_type;
 
 # Thermal
 type vendor_thermal_device, dev_type;
-
-# VL53L1 - ?
-type vl53l1_device, dev_type;
