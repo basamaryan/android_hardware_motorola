@@ -5,6 +5,7 @@ init_daemon_domain(vendor_init_hw)
 allow vendor_init_hw self:capability sys_module;
 allow vendor_init_hw vendor_file:system module_load;
 
+allow vendor_proc_hw proc:filesystem { associate };
 allow vendor_init_hw vendor_proc_hw:dir r_dir_perms;
 allow vendor_init_hw vendor_proc_hw:file rw_file_perms;
 

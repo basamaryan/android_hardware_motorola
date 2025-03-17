@@ -1,6 +1,6 @@
 # A/B partitions
 /dev/block/platform/soc/1d84000\.ufshc/sd[df]                   u:object_r:vendor_gpt_block_device:s0
-/dev/block/platform/soc/1d84000\.ufshc/by-name/fsg_[ab]         u:object_r:vendor_modem_efs_partition_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/fsg_[ab]         u:object_r:vendor_modem_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/logo_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/prov_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/storsec_[ab]     u:object_r:vendor_custom_ab_block_device:s0
@@ -38,6 +38,10 @@
 /(vendor|system/vendor)/lib64/libipebpsstriping\.so     u:object_r:same_process_hal_file:s0
 /data/vendor/misc/imager                                u:object_r:vendor_camera_data_file:s0
 /sys/devices/platform/soc/soc:qcom,cam-req-mgr/video4linux/video[0-33]/name(/.*)?       u:object_r:vendor_sysfs_jpeg:s0
+
+# Capsense
+/(vendor|system/vendor)/bin/capsense_reset                                 u:object_r:capsense_reset_exec:s0
+/vendor/bin/motpsd                                                         u:object_r:motpsd_exec:s0
 
 # Fingerprint
 /(mnt/vendor/persist|persist)/egis(/.*)?                u:object_r:vendor_persist_fps_file:s0
@@ -86,3 +90,6 @@
 /(vendor|system/vendor)/bin/init\.oem\.fingerprint\.sh          u:object_r:vendor_init_fingerprint_exec:s0
 /(vendor|system/vendor)/bin/init\.oem\.fingerprint2\.sh         u:object_r:vendor_init_fingerprint_exec:s0
 /(vendor|system/vendor)/bin/init\.oem\.hw\.sh                   u:object_r:vendor_init_hw_exec:s0
+
+# Cringe DNM
+/(vendor|system/vendor)/bin/load_touch\.sh                      u:object_r:vendor_qti_init_shell_exec:s0

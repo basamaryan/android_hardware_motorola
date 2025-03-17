@@ -1,0 +1,10 @@
+type motpsd, domain;
+type motpsd_exec, exec_type, file_type, vendor_file_type;
+
+allow motpsd self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+#allow motpsd self:socket create_socket_perms;
+#allow motpsd self:qipcrtr_socket create_socket_perms;
+#allowxperm motpsd self:ioctl socket { range 0xc300 0xc305 };
+#allowxperm motpsd self:ioctl qipcrtr_socket { range 0xc300 0xc305 };
+init_daemon_domain(motpsd)
+get_prop(motpsd, vendor_sensors_prop)
