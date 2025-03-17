@@ -1,6 +1,6 @@
 # A/B partitions
 /dev/block/platform/soc/1d84000\.ufshc/sd[df]                   u:object_r:vendor_gpt_block_device:s0
-/dev/block/platform/soc/1d84000\.ufshc/by-name/fsg_[ab]         u:object_r:vendor_modem_efs_partition_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/fsg_[ab]         u:object_r:vendor_modem_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/logo_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/prov_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/storsec_[ab]     u:object_r:vendor_custom_ab_block_device:s0
@@ -39,6 +39,9 @@
 /data/vendor/misc/imager                                u:object_r:vendor_camera_data_file:s0
 /sys/devices/platform/soc/soc:qcom,cam-req-mgr/video4linux/video[0-33]/name(/.*)?       u:object_r:vendor_sysfs_jpeg:s0
 
+# Capsense
+/(vendor|system/vendor)/bin/capsense_reset                                 u:object_r:capsense_reset_exec:s0
+
 # Fingerprint
 /(mnt/vendor/persist|persist)/egis(/.*)?                u:object_r:vendor_persist_fps_file:s0
 /(mnt/vendor/persist|persist)/fps(/.*)?                 u:object_r:vendor_persist_fps_file:s0
@@ -47,7 +50,6 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-goodixservice            u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-chipone          u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-ets              u:object_r:hal_fingerprint_default_exec:s0
-#/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-fpc              u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/egis_ident               u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/fpc_ident                u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/goodix_ident             u:object_r:hal_fingerprint_default_exec:s0
